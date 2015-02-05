@@ -15,14 +15,14 @@ var pagerTemplate = fs.readFileSync('./template/pager.html', 'utf8');
 var paginationTpl = new Template(paginationTemplate);
 var pagerTpl = new Template(pagerTemplate);
 var paginationDefaults = {
-    addClass: 'm-pagination',
+    addClass: '',
     max: 1,
     page: 1,
     size: 3,
     url: '/page/:page/'
 };
 var pagerDefaults = {
-    addClass: 'm-pager',
+    addClass: '',
     prev: '上一页',
     next: '下一页',
     // 默认为第 1 页
