@@ -16,5 +16,5 @@ var html2 = page.pager({
     page: 33
 });
 
-//console.log(html1);
+console.log(html1);
 console.log(html2);

@@ -7,11 +7,12 @@
 'use strict';
 
 var fs = require('fs');
+var path = require('path');
 var dato = require('ydr-util').dato;
 var Pagination = require('./Pagination.js');
 var Template = require('ydr-template');
-var paginationTemplate = fs.readFileSync('./template/pagination.html', 'utf8');
-var pagerTemplate = fs.readFileSync('./template/pager.html', 'utf8');
+var paginationTemplate = fs.readFileSync(path.join(__dirname, './template/pagination.html'), 'utf8');
+var pagerTemplate = fs.readFileSync(path.join(__dirname, './template/pager.html'), 'utf8');
 var paginationTpl = new Template(paginationTemplate);
 var pagerTpl = new Template(pagerTemplate);
 var paginationDefaults = {
