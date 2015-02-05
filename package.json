@@ -1,0 +1,36 @@
+{
+  "name": "ydr-pagination",
+  "version": "1.0.0",
+  "private": true,
+  "description": "pagination for ydr.me",
+  "scripts": {},
+  "preferGlobal": false,
+  "bin": {},
+  "main": "index.js",
+  "keywords": [
+    "pagination",
+    "page",
+    "pager",
+    "cloudcome",
+    "ydr.me"
+  ],
+  "author": {
+    "name": "cloudcome",
+    "email": "cloudcome@163.com",
+    "url": "http://ydr.me"
+  },
+  "homepage": "https://github.com/cloudcome/nodejs-ydr-pagination",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cloudcome/nodejs-ydr-pagination"
+  },
+  "bugs": {
+    "url": "https://github.com/cloudcome/nodejs-ydr-pagination/issues"
+  },
+  "dependencies": {
+    "ydr-template": "^1.4.2",
+    "ydr-util": "^1.11.9"
+  },
+  "devDependencies": {},
+  "licenses": "MIT"
+}
