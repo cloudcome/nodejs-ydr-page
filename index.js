@@ -18,7 +18,8 @@ var paginationDefaults = {
     addClass: 'm-pagination',
     max: 1,
     page: 1,
-    size: 3
+    size: 3,
+    url: '/page/:page/'
 };
 var pagerDefaults = {
     addClass: 'm-pager',
@@ -27,7 +28,8 @@ var pagerDefaults = {
     // 默认为第 1 页
     page: 1,
     // 最大页数
-    max: 1
+    max: 1,
+    url: '/page/:page/'
 };
 
 

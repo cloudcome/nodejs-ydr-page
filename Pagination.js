@@ -10,7 +10,8 @@ var klass = require('ydr-util').class;
 var defaults = {
     max: 1,
     page: 1,
-    size: 3
+    size: 3,
+    url: '#!/page/:page/'
 };
 var Pagination = klass.create({
     STATIC: {
@@ -42,7 +43,8 @@ var Pagination = klass.create({
             for (i = 1; i <= options.max; i++) {
                 list.push({
                     page: i,
-                    active: i === options.page
+                    active: i === options.page,
+                    url: the._buildURL(i)
                 });
             }
         }
@@ -51,7 +53,8 @@ var Pagination = klass.create({
             if (options.page > 1) {
                 list.push({
                     type: 'prev',
-                    page: options.page - 1
+                    page: options.page - 1,
+                    url: the._buildURL(options.page - 1)
                 });
             }
 
@@ -77,11 +80,12 @@ var Pagination = klass.create({
             // 首页
             if (i !== 1) {
                 list.push({
-                    page: 1
+                    page: 1,
+                    url: the._buildURL(1)
                 });
             }
 
-            if(i > 2){
+            if (i > 2) {
                 list.push({
                     type: 'ellipsis'
                 });
@@ -90,14 +94,16 @@ var Pagination = klass.create({
             // 当前之前
             for (; i < options.page; i++) {
                 list.push({
-                    page: i
+                    page: i,
+                    url: the._buildURL(i)
                 });
             }
 
             // 当前
             list.push({
                 page: options.page,
-                active: !0
+                active: !0,
+                url: the._buildURL(options.page)
             });
 
             // 当前之后
@@ -110,11 +116,12 @@ var Pagination = klass.create({
 
             for (; i < j; i++) {
                 list.push({
-                    page: i
+                    page: i,
+                    url: the._buildURL(i)
                 });
             }
 
-            if(i < options.max){
+            if (i < options.max) {
                 list.push({
                     type: 'ellipsis'
                 });
@@ -123,19 +130,28 @@ var Pagination = klass.create({
             // 尾页
             if (i <= options.max) {
                 list.push({
-                    page: options.max
+                    page: options.max,
+                    url: the._buildURL(options.max)
                 });
             }
 
             if (options.page < options.max) {
                 list.push({
                     type: 'next',
-                    page: options.page + 1
+                    page: options.page + 1,
+                    url: the._buildURL(options.page + 1)
                 });
             }
         }
 
         return list;
+    },
+
+    _buildURL: function (page) {
+        var the = this;
+        var options = the._options;
+
+        return options.url.replace(':page', page);
     }
 });
 
