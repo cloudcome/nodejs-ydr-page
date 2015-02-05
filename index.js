@@ -56,6 +56,14 @@ exports.pagination = function (options) {
  */
 exports.pager = function (options) {
     options = dato.extend(true, {}, pagerDefaults, options);
+    options.prev = {
+        text: options.prev,
+        url: options.url.replace(':page', options.page - 1)
+    };
+    options.next = {
+        text: options.next,
+        url: options.url.replace(':page', options.page + 1)
+    };
 
     return pagerTpl.render(options);
 };

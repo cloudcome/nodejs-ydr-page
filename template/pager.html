@@ -1,11 +1,11 @@
 {{if max}}
 <div class="m-pager {{addClass}}">
     {{if page > 1}}
-    <a class="pager-page pager-prev" data-page="{{page-1}}" href="{{=prev.url}}">{{prev.text}}</a>
+    <a class="pager-prev" data-page="{{page-1}}" href="{{=prev.url}}">{{prev.text}}</a>
     {{/if}}
-    <span class="pager-number">{{page}}</span>
+    <span class="active">{{page}}</span>
     {{if page < max}}
-    <a class="pager-page pager-next" data-page="{{page-1+2}}" href="{{=next.url}}">{{next.text}}</a>
+    <a class="pager-next" data-page="{{page-1+2}}" href="{{=next.url}}">{{next.text}}</a>
     {{/if}}
 </div>
 {{/if}}
