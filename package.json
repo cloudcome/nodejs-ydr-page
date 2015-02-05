@@ -1,8 +1,8 @@
 {
-  "name": "ydr-pagination",
+  "name": "ydr-page",
   "version": "1.0.0",
   "private": true,
-  "description": "pagination for ydr.me",
+  "description": "page for ydr.me",
   "scripts": {},
   "preferGlobal": false,
   "bin": {},
